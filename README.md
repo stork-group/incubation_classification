@@ -20,17 +20,9 @@ Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to th
 
 ### Application scope
 #### Generality of App usability
-*State here if the App was developed for a specific species, taxon or taxonomic group, or to answer a specific question. How might it influence the scope and utility of the App. This information will help the user to understand why the App might be producing no or odd results.*
+This App estimates laying and hatching dates of birds using GPS and accelerometer data. The App was developed and trained using data from White Stork (*Ciconia ciconia*). However, its methodology may be applicable to closely related taxa, such as other stork species (Ciconiidae and potentially other Ciconiiformes), or to more distantly related species with similar behaviour, body size and morphology, such as herons and flamingos. Nevertheless, its application to non-stork species should be approached with caution, as differences in behaviour, morphology and breeding ecology may affect model performance. Predictions should therefore be critically evaluated and independently validated whenever possible.
 
-*Examples:*
-
-This App was developed for any taxonomic group. 
-
-This App was developed using data of birds. 
-
-This App was developed using data of red deer. 
-
-This App was developed to identify kill sites, but can probably be used to identify any kind of location clusters like nests, dens or drinking holes.
+To facilitate adaptation to other species, the App is accompanied by scripts to develop and train species-specific posture and breeding behaviour Random Forest models, provided that an appropriate training dataset is available for the target species. This allows users to retrain the classification models using species-specific data, potentially extending the App's applicability beyond White Storks.
 
 #### Required data properties
 The App is designed to work with any type of GPS location data, provided that the tracking device is also equipped with an accelerometer capable of recording tri-axial acceleration data (X: sway, Y: surge, and Z: heave).
