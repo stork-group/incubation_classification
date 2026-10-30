@@ -61,7 +61,37 @@ The App should work for any kind of (location) data.
 ### Settings 
 *Please list and define all settings/parameters that the App requires to be set by the App user, if necessary including their unit. Please first state the Setting name the user encounters in the Settings menu defined in the `appspec.json`, and between brackets the argument name used in the code of the R function, to be able to identify it quickly in the code if needed. Please also state the default value, if there is one.*
 
-*Example:* `Radius of resting site` (radius): Defined radius the animal has to stay in for a given duration of time for it to be considered resting site. Unit: `metres`. Default: `1000`.
+## Movebank Settings
+`my_username` (my_username): Your Movebank username as a characater string. Unit: NA. Default: NA.
+`my_password` (my_password): Your Movebank password as a characater string. Unit: NA. Default: NA.
+`study_id` (study_id): Movebank study ID from where the data should be imported as a numeric value. Unit: NA. Default: NA.
+`time_start` (time_start): Earliest date (POSIXct format) and time from when data will be downloaded. Unit: "yyyy-mm-dd hh:mm:ss", tz = "UTC". Default: NA.
+`time_end` (time_end): Latest date (POSIXct format) and time from when data will be downloaded. Unit: "yyyy-mm-dd hh:mm:ss", tz = "UTC". Default: NA.
+
+## NestR Settings
+`sea_start` (sea_start1): Earliest date to analyse when looking for candidate nest locations (start of intensive nest use by your species) as a characater string. Unit: "mm-dd". Default: NA.
+`sea_end` (sea_end1): Latest date to analyse when looking for candidate nest locations (end of intensive nest use by your species) as a characater string. Unit: "mm-dd". Default: NA.
+`nest_cycle` (nest_cycle1): Expected duration of intensive nest use by your species as a numeric value. Unit: Days. Default: NA.
+`buffer` (buffer1): Circular buffer radius within which fixes can be considered to be at the candidate nest location. Unit: meters. Default: NA.
+`min_pts` (min_pts1): Minimum fixes within buffer to allow for the buffer centroid to be considered a candidate nest location. Unit: Count (N). Default: NA.
+`min_d_fix` (min_d_fix1): Minimum number of GPS fixes per day required at a candidate nest location. Unit: Count (N). Default: NA.
+`min_consec` (min_consec1): Minimum number of consecutive days a bird must meet the nest-site criteria for a location to be identified as a nest. Unit: Days. Default: NA.
+`min_top_att` (min_top_att1): Minimum percentage of GPS fixes at a candidate location on the day with the highest attendance required for that location to be considered a potential nest. Unit: Percentage (%). Default: NA.
+`min_days_att` (min_days_att1): Minimum percentage of days on which a location must be visited, between the first and last recorded visit, for it to be considered a potential nest. Unit: Percentage (%). Default: NA.
+
+## Data Filter Settings
+`month_start` (month_start): Earliest month to keep data (start of the active breeding season) as a numeric value. Unit: Month. Default: NA.
+`month_end` (month_end): Latest month to keep data (end of the active breeding season) as a numeric value. Unit: Month. Default: NA.
+`max_frequency` (max_frequency): Minimum time interval between consecutive GPS fixes. Unit: Minutes. Default: NA.
+`min_n_fix_day` (min_n_fix_day): Minimum number of GPS fixes required per bird-day for inclusion in the analysis. Unit: Count (N). Default: NA.
+`nest_radius` (nest_radius): Radius around the nest within which GPS fixes are classified as 'at the nest'. Unit: Meters. Default: NA.
+`min_acc_bouts_day` (min_acc_bouts_day): Minimum number of accelerometer bouts required per bird-day for inclusion in the analysis. Unit: Count (N). Default: NA.
+
+## Breeding and Incubation Classification Settings
+`laying_threshold` (laying_threshold): Probability threshold above which the GAM-smoothed incubation probability must rise for the first time to estimate the laying date. Unit: Probability (0-1). Default: NA.
+`hatching_threshold` (laying_threshold): Probability threshold below which the GAM-smoothed incubation probability must fall for the last time to estimate the hatching date. Unit: Probability (0-1). Default: NA.
+`min_inc_per_1clutch` (min_inc_per_1clutch): Minimum incubation period duration for a single clutch case in the target species. Unit: Days. Default: NA.
+`min_inc_per_2clutch` (min_inc_per_2clutch): Minimum incubation period duration for a second clutch case in the target species. Unit: Days. Default: NA.
 
 ### Changes in output data
 *Specify here how and if the App modifies the input data. Describe clearly what e.g. each additional column means.*
