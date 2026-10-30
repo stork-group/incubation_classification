@@ -66,9 +66,9 @@ The App should work for any kind of (location) data.
 
 `study_id` (study_id): Movebank study ID from where the data should be imported as a numeric value. Unit: NA. Default: NA.
 
-`time_start` (time_start): Earliest date (POSIXct format) and time from when data will be downloaded. Unit: "yyyy-mm-dd hh:mm:ss", tz = "UTC". Default: NA.
+`time_start` (time_start): Earliest date and time from which GPS data will be downloaded. Format: yyyy-mm-dd hh:mm:ss (POSIXct), time zone: UTC. Default: NA.
 
-`time_end` (time_end): Latest date (POSIXct format) and time from when data will be downloaded. Unit: "yyyy-mm-dd hh:mm:ss", tz = "UTC". Default: NA.
+`time_end` (time_end): Latest date and time from which GPS data will be downloaded. Format: yyyy-mm-dd hh:mm:ss (POSIXct), time zone: UTC. Default: NA.
 
 #### NestR Settings
 `sea_start` (sea_start1): Earliest date to analyse when looking for candidate nest locations (start of intensive nest use by your species) as a characater string. Unit: "mm-dd". Default: NA.
