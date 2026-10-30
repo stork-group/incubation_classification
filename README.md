@@ -61,7 +61,7 @@ The App should work for any kind of (location) data.
 ### Settings 
 *Please list and define all settings/parameters that the App requires to be set by the App user, if necessary including their unit. Please first state the Setting name the user encounters in the Settings menu defined in the `appspec.json`, and between brackets the argument name used in the code of the R function, to be able to identify it quickly in the code if needed. Please also state the default value, if there is one.*
 
-# Movebank Settings
+#### Movebank Settings
 `my_username` (my_username): Your Movebank username as a characater string. Unit: NA. Default: NA.
 
 `my_password` (my_password): Your Movebank password as a characater string. Unit: NA. Default: NA.
@@ -72,7 +72,7 @@ The App should work for any kind of (location) data.
 
 `time_end` (time_end): Latest date (POSIXct format) and time from when data will be downloaded. Unit: "yyyy-mm-dd hh:mm:ss", tz = "UTC". Default: NA.
 
-# NestR Settings
+#### NestR Settings
 `sea_start` (sea_start1): Earliest date to analyse when looking for candidate nest locations (start of intensive nest use by your species) as a characater string. Unit: "mm-dd". Default: NA.
 
 `sea_end` (sea_end1): Latest date to analyse when looking for candidate nest locations (end of intensive nest use by your species) as a characater string. Unit: "mm-dd". Default: NA.
@@ -91,7 +91,7 @@ The App should work for any kind of (location) data.
 
 `min_days_att` (min_days_att1): Minimum percentage of days on which a location must be visited, between the first and last recorded visit, for it to be considered a potential nest. Unit: Percentage (%). Default: NA.
 
-# Data Filter Settings
+#### Data Filter Settings
 `month_start` (month_start): Earliest month to keep data (start of the active breeding season) as a numeric value. Unit: Month. Default: NA.
 
 `month_end` (month_end): Latest month to keep data (end of the active breeding season) as a numeric value. Unit: Month. Default: NA.
@@ -104,7 +104,7 @@ The App should work for any kind of (location) data.
 
 `min_acc_bouts_day` (min_acc_bouts_day): Minimum number of accelerometer bouts required per bird-day for inclusion in the analysis. Unit: Count (N). Default: NA.
 
-# Breeding and Incubation Classification Settings
+#### Breeding and Incubation Classification Settings
 `laying_threshold` (laying_threshold): Probability threshold above which the GAM-smoothed incubation probability must rise for the first time to estimate the laying date. Unit: Probability (0-1). Default: NA.
 
 `hatching_threshold` (laying_threshold): Probability threshold below which the GAM-smoothed incubation probability must fall for the last time to estimate the hatching date. Unit: Probability (0-1). Default: NA.
