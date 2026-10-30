@@ -35,23 +35,19 @@ This App was developed to identify kill sites, but can probably be used to ident
 #### Required data properties
 *State here the required and/or optimal data properties for this App to perform properly.*
 
-*Examples:*
-
-This App is only applicable to data that reflect range resident behavior. 
-
-The data should have a fix rate of at least 1 location per 30 minutes. 
-
-The App should work for any kind of (location) data.
+The App is designed to work with any type of GPS location data, provided that the tracking device is also equipped with an accelerometer capable of recording tri-axial acceleration data (X: sway, Y: surge, and Z: heave).
 
 ### Input type
-*Indicate which type of input data the App requires.*
+The App automatically retrieves GPS location and tri-axial accelerometer data from Movebank using the `move::getMovebank` and `move::getMovebankData` functions. No manual data upload is required.
 
-*Example:* `move2::move2_loc`
+Input type: Movebank study data (GPS and accelerometer data).
 
 ### Output type
-*Indicate which type of output data the App produces to be passed on to subsequent Apps.*
+The App generates several intermediate CSV and Excel files during processing, but its primary output is a CSV file named `original_df_annotated_.csv`, containing the original GPS data annotated with the predicted breeding-related information and behavioural classifications.
 
-*Example:* `move2::move2_loc`
+Output type: CSV (`.csv`).
+
+Final output file: `original_df_annotated_.csv`.
 
 ### Artefacts
 *If the App creates artefacts (e.g. csv, pdf, jpeg, shapefiles, etc), please list them here and describe each.*
