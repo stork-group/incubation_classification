@@ -60,39 +60,39 @@ The App should work for any kind of (location) data.
 
 ### Settings 
 #### Movebank Settings
-`my_username` (my_username): Your Movebank username as a characater string. Unit: NA. Default: NA.
+`my_username` (my_username): Your Movebank username as a characater string. Unit: NA (dimensionless). Default: NA.
 
-`my_password` (my_password): Your Movebank password as a characater string. Unit: NA. Default: NA.
+`my_password` (my_password): Your Movebank password as a characater string. Unit: NA (dimensionless). Default: NA.
 
-`study_id` (study_id): Movebank study ID from where the data should be imported as a numeric value. Unit: NA. Default: NA.
+`study_id` (study_id): Numeric Movebank study ID identifying the study from which the data will be imported. Unit: NA (dimensionless). Default: NA.
 
 `time_start` (time_start): Earliest date and time from which GPS data will be downloaded. Format: yyyy-mm-dd hh:mm:ss (POSIXct), time zone: UTC. Default: NA.
 
 `time_end` (time_end): Latest date and time from which GPS data will be downloaded. Format: yyyy-mm-dd hh:mm:ss (POSIXct), time zone: UTC. Default: NA.
 
 #### NestR Settings
-`sea_start` (sea_start1): Earliest date to analyse when looking for candidate nest locations (start of intensive nest use by your species) as a characater string. Unit: "mm-dd". Default: NA.
+`sea_start` (sea_start1): Earliest date from which to search for candidate nest locations, corresponding to the start of the period of intensive nest use for the target species. Format: character string ("mm-dd"). Default: NA.
 
-`sea_end` (sea_end1): Latest date to analyse when looking for candidate nest locations (end of intensive nest use by your species) as a characater string. Unit: "mm-dd". Default: NA.
+`sea_end` (sea_end1): Latest date from which to search for candidate nest locations, corresponding to the start of the period of intensive nest use for the target species. Format: character string ("mm-dd"). Default: NA.
 
-`nest_cycle` (nest_cycle1): Expected duration of intensive nest use by your species as a numeric value. Unit: Days. Default: NA.
+`nest_cycle` (nest_cycle1): Expected duration of the period of intensive nest use for the target species. Unit: Days (d). Default: NA.
 
-`buffer` (buffer1): Circular buffer radius within which fixes can be considered to be at the candidate nest location. Unit: meters. Default: NA.
+`buffer` (buffer1): Radius of the circular buffer around a candidate nest location within which GPS fixes are classified as being at the nest. Unit: Meters (m). Default: NA.
 
 `min_pts` (min_pts1): "Minimum number of GPS fixes within a buffer required for its centroid to be considered a candidate nest location. Unit: Count (N). Default: NA.
 
 `min_d_fix` (min_d_fix1): Minimum number of GPS fixes per day required at a candidate nest location. Unit: Count (N). Default: NA.
 
-`min_consec` (min_consec1): Minimum number of consecutive days a bird must meet the nest-site criteria for a location to be identified as a nest. Unit: Days. Default: NA.
+`min_consec` (min_consec1): Minimum number of consecutive days a bird must meet the nest-site criteria for a location to be identified as a nest. Unit: Days (d). Default: NA.
 
 `min_top_att` (min_top_att1): Minimum percentage of GPS fixes at a candidate location on the day with the highest attendance required for that location to be considered a potential nest. Unit: Percentage (%). Default: NA.
 
 `min_days_att` (min_days_att1): Minimum percentage of days on which a location must be visited, between the first and last recorded visit, for it to be considered a potential nest. Unit: Percentage (%). Default: NA.
 
 #### Data Filter Settings
-`month_start` (month_start): Earliest month to keep data (start of the active breeding season) as a numeric value. Unit: Month. Default: NA.
+`month_start` (month_start): Earliest month to retain GPS data, corresponding to the start of the active breeding season. Specified as a numeric value (1–12). Unit: month. Default: NA.
 
-`month_end` (month_end): Latest month to keep data (end of the active breeding season) as a numeric value. Unit: Month. Default: NA.
+`month_end` (month_end): Latest month to retain GPS data, corresponding to the end of the active breeding season. Specified as a numeric value (1–12). Unit: month. Default: NA.
 
 `max_frequency` (max_frequency): Minimum time interval between consecutive GPS fixes. Unit: Minutes. Default: NA.
 
