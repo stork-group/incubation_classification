@@ -76,6 +76,8 @@ Final output file: `original_df_annotated_.csv`.
 
 `laying_hatching_predictions_summary_.xlsx`: Excel file containing summary data, with one row per individual-year combination. Includes the predicted laying and hatching dates, incubation period duration (days), and breeding outcome (`single_clutch`, `second_clutch`, `no_breeding`, `failed_breeding`, or `unknown`).
 
+`original_df_annotated_.csv`: CSV file derived from the original input dataset (`all_data_movebank.csv`), filtered to retain only individual-year combinations for which at least one breeding date (laying or hatching) was successfully predicted. Includes additional columns with the predicted laying and hatching dates, incubation period duration (days), and breeding outcome (`single_clutch`, `second_clutch`, `no_breeding`, `failed_breeding`, or `unknown`). This is the main output of the App.
+
 ### Settings 
 #### Movebank Settings
 `my_username` (my_username): Your Movebank username as a characater string. Unit: NA (dimensionless). Default: NA.
