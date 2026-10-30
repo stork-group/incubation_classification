@@ -98,7 +98,7 @@ The App should work for any kind of (location) data.
 
 `min_n_fix_day` (min_n_fix_day): Minimum number of GPS fixes required per bird-day for inclusion in the analysis. Unit: Count (N). Default: NA.
 
-`nest_radius` (nest_radius): Radius around the nest within which GPS fixes are classified as 'at the nest'. Unit: Meters. Default: NA.
+`nest_radius` (nest_radius): Radius around the nest within which GPS fixes are classified as 'at the nest'. Unit: Meters (m). Default: NA.
 
 `min_acc_bouts_day` (min_acc_bouts_day): Minimum number of accelerometer bouts required per bird-day for inclusion in the analysis. Unit: Count (N). Default: NA.
 
@@ -107,9 +107,9 @@ The App should work for any kind of (location) data.
 
 `hatching_threshold` (laying_threshold): Probability threshold below which the GAM-smoothed incubation probability must fall for the last time to estimate the hatching date. Unit: Probability (0-1). Default: NA.
 
-`min_inc_per_1clutch` (min_inc_per_1clutch): Minimum incubation period duration for a single clutch case in the target species. Unit: Days. Default: NA.
+`min_inc_per_1clutch` (min_inc_per_1clutch): Minimum incubation period duration for a single clutch case in the target species. Unit: Days (d). Default: NA.
 
-`min_inc_per_2clutch` (min_inc_per_2clutch): Minimum incubation period duration for a second clutch case in the target species. Unit: Days. Default: NA.
+`min_inc_per_2clutch` (min_inc_per_2clutch): Minimum incubation period duration for a second clutch case in the target species. Unit: Days (d). Default: NA.
 
 ### Changes in output data
 *Specify here how and if the App modifies the input data. Describe clearly what e.g. each additional column means.*
