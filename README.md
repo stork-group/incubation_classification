@@ -59,8 +59,6 @@ The App should work for any kind of (location) data.
 *Example:* `rest_overview.csv`: csv-file with Table of all rest site properties
 
 ### Settings 
-*Please list and define all settings/parameters that the App requires to be set by the App user, if necessary including their unit. Please first state the Setting name the user encounters in the Settings menu defined in the `appspec.json`, and between brackets the argument name used in the code of the R function, to be able to identify it quickly in the code if needed. Please also state the default value, if there is one.*
-
 #### Movebank Settings
 `my_username` (my_username): Your Movebank username as a characater string. Unit: NA. Default: NA.
 
