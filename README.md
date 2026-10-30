@@ -79,7 +79,7 @@ The App should work for any kind of (location) data.
 
 `buffer` (buffer1): Circular buffer radius within which fixes can be considered to be at the candidate nest location. Unit: meters. Default: NA.
 
-`min_pts` (min_pts1): Minimum fixes within buffer to allow for the buffer centroid to be considered a candidate nest location. Unit: Count (N). Default: NA.
+`min_pts` (min_pts1): "Minimum number of GPS fixes within a buffer required for its centroid to be considered a candidate nest location. Unit: Count (N). Default: NA.
 
 `min_d_fix` (min_d_fix1): Minimum number of GPS fixes per day required at a candidate nest location. Unit: Count (N). Default: NA.
 
