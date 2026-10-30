@@ -43,16 +43,26 @@ The App automatically retrieves GPS location and tri-axial accelerometer data fr
 Input type: Movebank study data (GPS and accelerometer data).
 
 ### Output type
-The App generates several intermediate CSV and Excel files during processing, but its primary output is a CSV file named `original_df_annotated_.csv`, containing the original GPS data annotated with the predicted breeding-related information and behavioural classifications.
+The App generates several intermediate CSV and Excel files during processing, but its primary output is a CSV file named `original_df_annotated_.csv`, containing the original GPS data annotated with the predicted breeding-related information.
 
 Output type: CSV (`.csv`).
 
 Final output file: `original_df_annotated_.csv`.
 
 ### Artefacts
-*If the App creates artefacts (e.g. csv, pdf, jpeg, shapefiles, etc), please list them here and describe each.*
+`all_data_movebank.csv`: CSV file containing raw GPS and accelerometer data downloaded from Movebank in long format, along with all additional metadata and associated data columns.
 
-*Example:* `rest_overview.csv`: csv-file with Table of all rest site properties
+`gps_raw_data.csv`: CSV file containing GPS data downloaded from Movebank in long format, along with only the essential additional metadata and associated data columns ("individual_local_identifier", "timestamp", "location_long", "location_lat", "sex", "device_type").
+
+`gps_raw_data.csv`: CSV file containing accelerometer data downloaded from Movebank in wide format, one row per accelerometer burst, along with only the essential additional metadata and associated data columns ("individual_local_identifier", "timestamp", "location_long", "location_lat", "acceleration_raw_x", "acceleration_raw_y", "acceleration_raw_z", "sex","device_type").
+
+`nest_df.csv`: CSV file containing the estimated nest coordinates (latitude and longitude) for each bird-year combination, identified using the `nestR` package.
+
+`gps_.csv`: CSV file containing GPS data after applying quality and spatial filters. Includes only individual-year combinations meeting the minimum daily GPS fix and accelerometer bout requirements, with GPS fixes restricted to locations within the defined nest buffer.
+
+`acc_.csv`: CSV file containing accelerometer data after applying quality and spatial filters. Includes only individual-year combinations meeting the minimum daily GPS fix and accelerometer bout requirements, with bouts restricted to locations within the defined nest buffer.
+
+`gps_nest_status_.csv`: CSV file containing GPS data after applying (only) quality filters, retaining only individual-year combinations that meet the minimum daily GPS fix and accelerometer bout requirements. Includes an additional column classifying each GPS fix as `at_nest` (within the defined nest buffer) or `not_nest` (outside the nest buffer). 
 
 ### Settings 
 #### Movebank Settings
