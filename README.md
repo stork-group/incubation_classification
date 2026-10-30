@@ -1,4 +1,4 @@
-# Name of App *(Give your app a short and informative title. Please adhere to our convention of Title Case without hyphens (e.g. My New App))*
+# White Stork Incubation Phenology Predictor
 
 MoveApps
 
@@ -33,8 +33,6 @@ This App was developed using data of red deer.
 This App was developed to identify kill sites, but can probably be used to identify any kind of location clusters like nests, dens or drinking holes.
 
 #### Required data properties
-*State here the required and/or optimal data properties for this App to perform properly.*
-
 The App is designed to work with any type of GPS location data, provided that the tracking device is also equipped with an accelerometer capable of recording tri-axial acceleration data (X: sway, Y: surge, and Z: heave).
 
 ### Input type
@@ -132,17 +130,7 @@ Final output file: `original_df_annotated_.csv`.
 `min_inc_per_2clutch` (min_inc_per_2clutch): Minimum incubation period duration for a second clutch case in the target species. Unit: Days (d). Default: NA.
 
 ### Changes in output data
-*Specify here how and if the App modifies the input data. Describe clearly what e.g. each additional column means.*
-
-*Examples:*
-
-The App adds to the input data the columns `Max_dist` and `Avg_dist`. They contain the maximum distance to the provided focal location and the average distance to it over all locations. 
-
-The App filters the input data as selected by the user. 
-
-The output data is the outcome of the model applied to the input data. 
-
-The input data remains unchanged.
+The App filters the input data to retain only individual-year combinations for which at least one breeding date (laying or hatching) was successfully predicted. It also adds columns with the predicted laying and hatching dates, incubation period duration (days), and breeding outcome (`single_clutch`, `second_clutch`, `no_breeding`, `failed_breeding`, or `unknown`).
 
 ### Errors and null handling
 *Please describe here the most common errors of the App: how they occur and the best ways of solving them. You can also indicate for settings, as well as for the input data, which behaviour the App is supposed to show in case of errors or NULL values/input, including possible errors that can happen if settings/parameters are improperly set. Add here also any other important information that you find the User should be aware of.*
