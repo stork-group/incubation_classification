@@ -64,6 +64,18 @@ Final output file: `original_df_annotated_.csv`.
 
 `gps_nest_status_.csv`: CSV file containing GPS data after applying (only) quality filters, retaining only individual-year combinations that meet the minimum daily GPS fix and accelerometer bout requirements. Includes an additional column classifying each GPS fix as `at_nest` (within the defined nest buffer) or `not_nest` (outside the nest buffer). 
 
+`behav_classif_sitting_non_sitting.csv`: CSV file containing accelerometer data after applying quality and spatial filters, retaining only individual-year combinations that meet the minimum daily GPS fix and accelerometer bout requirements, with bouts restricted to locations within the defined nest buffer. Includes additional columns with summary statistics calculated from the tri-axial accelerometer data, used as predictors in the posture Random Forest classification. Also contains the Random Forest posture prediction for each bout (`sitting` or `non_sitting`) and its associated confidence score.
+
+`daily_sitting_prop_.csv`: CSV file containing daily data, with one row per day, summarising the proportion of accelerometer bouts within the nest buffer classified as `sitting` by the posture Random Forest model for each bird-day combination. 
+
+`daily_nest_use_.csv`: CSV file containing daily data, with one row per individual-day combination, summarising the proportion of GPS fixes recorded within the defined nest buffer.
+
+`incubation_prediction_.csv`: CSV file containing daily data, with one row per individual-day combination. Includes all predictor variables used by the breeding behaviour Random Forest model, as well as the model's predictions classifying each bird-day as `incubation` or `non_incubation`, with an associated confidence score for each prediction.
+
+`laying_hatching_predictions_daily_.xlsx`: Excel file containing daily data, with one row per individual-day combination. Includes all predictor variables used by the breeding behaviour Random Forest model, as well as the model's predictions classifying each bird-day as `incubation` or `non_incubation`, with an associated confidence score for each prediction. Also includes additional columns with the predicted laying and hatching dates, incubation period duration (days), and breeding outcome (`single_clutch`, `second_clutch`, `no_breeding`, `failed_breeding`, or `unknown`).
+
+`laying_hatching_predictions_summary_.xlsx`: Excel file containing summary data, with one row per individual-year combination. Includes the predicted laying and hatching dates, incubation period duration (days), and breeding outcome (`single_clutch`, `second_clutch`, `no_breeding`, `failed_breeding`, or `unknown`).
+
 ### Settings 
 #### Movebank Settings
 `my_username` (my_username): Your Movebank username as a characater string. Unit: NA (dimensionless). Default: NA.
