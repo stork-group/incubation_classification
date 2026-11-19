@@ -13,7 +13,7 @@ Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to th
 *)*
 
 ## Description
-This Movebank App allows users to estimate key breeding parameters in birds using GPS and accelerometer (ACC) tracking data. Specifically, it estimates egg-laying and hatching dates, incubation period duration, and breeding outcomes, including single clutch, second clutch, failed breeding and no breeding.
+This Move App allows users to estimate key breeding parameters in birds using GPS and accelerometer (ACC) tracking data. Specifically, it estimates egg-laying and hatching dates, incubation period duration, and breeding outcomes, including single clutch, second clutch, failed breeding and no breeding.
 
 The App was developed and validated using data from White Stork (*Ciconia ciconia*), but its methodology may be applicable to other bird species with suitable tracking data. It uses both GPS and accelerometer data as input, which can be downloaded directly from Movebank, eliminating the need for additional data sources. The estimation process combines machine-learning and statistical approaches to identify breeding-related behaviours and infer reproductive events from animal movement and activity patterns.
 
