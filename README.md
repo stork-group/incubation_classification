@@ -13,14 +13,18 @@ Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to th
 *)*
 
 ## Description
-*Enter here the short description of the App that might also be used when filling out the description during App submission to MoveApps. This text is directly presented to Users that look through the list of Apps when compiling Workflows.*
+This Movebank App allows users to estimate key breeding parameters in birds using GPS and accelerometer (ACC) tracking data. Specifically, it estimates egg-laying and hatching dates, incubation period duration, and breeding outcomes, including single clutch, second clutch, failed breeding and no breeding.
+
+The App was developed and validated using data from White Stork (*Ciconia ciconia*), but its methodology may be applicable to other bird species with suitable tracking data. It uses both GPS and accelerometer data as input, which can be downloaded directly from Movebank, eliminating the need for additional data sources. The estimation process combines machine-learning and statistical approaches to identify breeding-related behaviours and infer reproductive events from animal movement and activity patterns.
+
+The App is primarily intended for researchers and conservation practitioners interested in studying breeding phenology, reproductive performance, and animal movement ecology. By providing estimates of key reproductive parameters from remotely collected tracking data, it offers a tool for investigating breeding behaviour and reproductive outcomes at the individual level, potentially reducing the need for intensive field monitoring.
 
 ## Documentation
 *Enter here a detailed description of your App. What is it intended to be used for. Which steps of analyses are performed and how. Please be explicit about any detail that is important for use and understanding of the App and its outcomes. You might also refer to the sections below.*
 
 ### Application scope
 #### Generality of App usability
-This App estimates laying and hatching dates of birds using GPS and accelerometer data. The App was developed and trained using data from White Stork (*Ciconia ciconia*). However, its methodology may be applicable to closely related taxa, such as other stork species (Ciconiidae and potentially other Ciconiiformes), or to more distantly related species with similar behaviour, body size and morphology, such as herons and flamingos. Nevertheless, its application to non-stork species should be approached with caution, as differences in behaviour, morphology and breeding ecology may affect model performance. Predictions should therefore be critically evaluated and independently validated whenever possible.
+This App estimates laying and hatching dates of birds using GPS and accelerometer data. The App was developed and trained using data from White Stork. However, its methodology may be applicable to closely related taxa, such as other stork species (Ciconiidae and potentially other Ciconiiformes), or to more distantly related species with similar behaviour, body size and morphology, such as herons and flamingos. Nevertheless, its application to non-stork species should be approached with caution, as differences in behaviour, morphology and breeding ecology may affect model performance. Predictions should therefore be critically evaluated and independently validated whenever possible.
 
 To facilitate adaptation to other species, the App is accompanied by scripts to develop and train species-specific posture and breeding behaviour Random Forest models, provided that an appropriate training dataset is available for the target species. This allows users to retrain the classification models using species-specific data, potentially extending the App's applicability beyond White Storks.
 
