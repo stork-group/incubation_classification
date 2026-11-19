@@ -20,7 +20,9 @@ The App was developed and validated using data from White Stork (*Ciconia ciconi
 The App is primarily intended for researchers and conservation practitioners interested in studying breeding phenology, reproductive performance, and animal movement ecology. By providing estimates of key reproductive parameters from remotely collected tracking data, it offers a tool for investigating breeding behaviour and reproductive outcomes at the individual level, potentially reducing the need for intensive field monitoring.
 
 ## Documentation
-*Enter here a detailed description of your App. What is it intended to be used for. Which steps of analyses are performed and how. Please be explicit about any detail that is important for use and understanding of the App and its outcomes. You might also refer to the sections below.*
+This App uses GPS and tri-axial accelerometer data retrieved directly from Movebank to estimate breeding parameters at the individual-year level, including egg-laying and hatching dates, incubation period duration and breeding outcome.
+
+The App was developed and its classification models trained using White Stork data. Although its methodology may be applicable to other bird species, differences in behaviour, breeding ecology and tracking-device configurations may affect model performance. Its application to other species should therefore be approached with caution, and predictions should be independently validated whenever possible.
 
 ### Application scope
 #### Generality of App usability
