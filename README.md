@@ -13,7 +13,7 @@ Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to th
 *)*
 
 ## Description
-This Move App allows users to estimate key breeding parameters in birds using GPS and accelerometer (ACC) tracking data. Specifically, it estimates egg-laying and hatching dates, incubation period duration, and breeding outcomes, including single clutch, second clutch, failed breeding and no breeding.
+This Move App allows users to estimate key breeding parameters in birds using GPS and accelerometer tracking data. Specifically, it estimates egg-laying and hatching dates, incubation period duration, and breeding outcomes, including single clutch, second clutch, failed breeding and no breeding.
 
 The App was developed and validated using data from White Stork (*Ciconia ciconia*), but its methodology may be applicable to other bird species with suitable tracking data. It uses both GPS and accelerometer data as input, which can be downloaded directly from Movebank. The estimation process combines machine-learning and statistical approaches to identify breeding-related behaviours and infer reproductive events from animal movement and activity patterns.
 
@@ -44,27 +44,7 @@ Output type: CSV (`.csv`).
 Final output file: `original_df_annotated_.csv`.
 
 ### Artefacts
-`all_data_movebank.csv`: CSV file containing raw GPS and accelerometer data downloaded from Movebank in long format, along with all additional metadata and associated data columns.
-
-`gps_raw_data.csv`: CSV file containing GPS data downloaded from Movebank in long format, along with only the essential additional metadata and associated data columns ("individual_local_identifier", "timestamp", "location_long", "location_lat", "sex", "device_type").
-
-`gps_raw_data.csv`: CSV file containing accelerometer data downloaded from Movebank in wide format, one row per accelerometer burst, along with only the essential additional metadata and associated data columns ("individual_local_identifier", "timestamp", "location_long", "location_lat", "acceleration_raw_x", "acceleration_raw_y", "acceleration_raw_z", "sex","device_type").
-
 `nest_df.csv`: CSV file containing the estimated nest coordinates (latitude and longitude) for each bird-year combination, identified using the `nestR` package.
-
-`gps_.csv`: CSV file containing GPS data after applying quality and spatial filters. Includes only individual-year combinations meeting the minimum daily GPS fix and accelerometer bout requirements, with GPS fixes restricted to locations within the defined nest buffer.
-
-`acc_.csv`: CSV file containing accelerometer data after applying quality and spatial filters. Includes only individual-year combinations meeting the minimum daily GPS fix and accelerometer bout requirements, with bouts restricted to locations within the defined nest buffer.
-
-`gps_nest_status_.csv`: CSV file containing GPS data after applying (only) quality filters, retaining only individual-year combinations that meet the minimum daily GPS fix and accelerometer bout requirements. Includes an additional column classifying each GPS fix as `at_nest` (within the defined nest buffer) or `not_nest` (outside the nest buffer). 
-
-`behav_classif_sitting_non_sitting.csv`: CSV file containing accelerometer data after applying quality and spatial filters, retaining only individual-year combinations that meet the minimum daily GPS fix and accelerometer bout requirements, with bouts restricted to locations within the defined nest buffer. Includes additional columns with summary statistics calculated from the tri-axial accelerometer data, used as predictors in the posture Random Forest classification. Also contains the Random Forest posture prediction for each bout (`sitting` or `non_sitting`) and its associated confidence score.
-
-`daily_sitting_prop_.csv`: CSV file containing daily data, with one row per day, summarising the proportion of accelerometer bouts within the nest buffer classified as `sitting` by the posture Random Forest model for each bird-day combination. 
-
-`daily_nest_use_.csv`: CSV file containing daily data, with one row per individual-day combination, summarising the proportion of GPS fixes recorded within the defined nest buffer.
-
-`incubation_prediction_.csv`: CSV file containing daily data, with one row per individual-day combination. Includes all predictor variables used by the breeding behaviour Random Forest model, as well as the model's predictions classifying each bird-day as `incubation` or `non_incubation`, with an associated confidence score for each prediction.
 
 `laying_hatching_predictions_daily_.xlsx`: Excel file containing daily data, with one row per individual-day combination. Includes all predictor variables used by the breeding behaviour Random Forest model, as well as the model's predictions classifying each bird-day as `incubation` or `non_incubation`, with an associated confidence score for each prediction. Also includes additional columns with the predicted laying and hatching dates, incubation period duration (days), and breeding outcome (`single_clutch`, `second_clutch`, `no_breeding`, `failed_breeding`, or `unknown`).
 
@@ -131,13 +111,9 @@ The App filters the input data to retain only individual-year combinations for w
 ### Errors and null handling
 *Please describe here the most common errors of the App: how they occur and the best ways of solving them. You can also indicate for settings, as well as for the input data, which behaviour the App is supposed to show in case of errors or NULL values/input, including possible errors that can happen if settings/parameters are improperly set. Add here also any other important information that you find the User should be aware of.*
 
-*Examples:*
+**Settings:** All settings must be properly defined before running the App. If any required setting is missing or left undefined, the App will stop and generate an error message indicating where the issue occured. The location of the error message within the script depends on which setting has not been specified.
 
-**Setting `radius`:** If no radius AND no duration are given, the input data set is returned with a warning. If no radius is given (NULL), but a duration is defined then a default radius of 1000m = 1km is set. 
-
-**Input data:** If the input data contain fewer than 3 locations per track, the App stops with an error message stating which tracks are affected.
-
-**Common error:** If the App is used on data with a very low fix rate, no resting sites are found and the App returns an empty data set. Adapt the settings `radius` and `duration` to the resolution of your data.
+**Input data:** If the input data contain only tracks with fewer than 19 GPS locations per day and/or fewer than 5 accelerometer bouts per day, the App will stop running and display an error message.
 
 ### Technical details
 *Optional, but recommended. Summarize here how the App works "under the hood", so that Users and developers can get a quick idea of the methods, dependencies and assumptions without having to read the code. Keep it short (a few sentences or bullet points) and mention only what is not already obvious from the sections above.*
