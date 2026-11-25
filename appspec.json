@@ -1,77 +1,193 @@
 {
-  "version": "1.2",
+  "version": "1.0",
   "settings": [
     {
-      "id": "sdk",
-      "name": "The name of the MoveApps SDK",
-      "description": "Showcase requesting a string input from the users of your app.",
-      "defaultValue": "MoveApps SDK",
+      "id": "sea_start1",
+      "name": "Earliest nest use date (mm-dd)",
+      "description": "Earliest date to analyse (start of intensive nest use; mm-dd)",
+      "defaultValue": "03-01",
       "type": "STRING"
     },
     {
-      "id": "year",
-      "name": "The year",
-      "description": "Insert description for the year setting setting",
-      "defaultValue": 2022,
+      "id": "sea_end1",
+      "name": "Latest nest use date (mm-dd)",
+      "description": "Latest date to analyse (end of intensive nest use; mm-dd)",
+      "defaultValue": "05-31",
+      "type": "STRING"
+    },
+    {
+      "id": "nest_cycle1",
+      "name": "Nest cycle duration (days)",
+      "description": "Duration in days of intensive nest use",
+      "defaultValue": 35,
       "type": "INTEGER"
     },
     {
-      "id": "auxiliary-file-a",
-      "name": "Personalization",
-      "description": "You can personalize the app by providing a file",
-      "type": "USER_FILE"
+      "id": "buffer1",
+      "name": "Buffer (meters)",
+      "description": "Buffer in meters around which fixes can be considered to be at the nest",
+      "defaultValue": 20,
+      "type": "INTEGER"
+    },
+    {
+      "id": "min_pts1",
+      "name": "Minimum fixes within buffer",
+      "description": "Minimum fixes within buffer to allow for a centroid to be considered a nest",
+      "defaultValue": 2,
+      "type": "INTEGER"
+    },
+    {
+      "id": "min_d_fix1",
+      "name": "Minimum fixes per day (Bird-day)",
+      "description": "Minimum number of fixes per day for bird-day to be included in analysis",
+      "defaultValue": 19,
+      "type": "INTEGER"
+    },
+    {
+      "id": "min_consec1",
+      "name": "Minimum consecutive days",
+      "description": "Minimum consecutive days of use for a point to be considered a nest",
+      "defaultValue": 2,
+      "type": "INTEGER"
+    },
+    {
+      "id": "min_top_att1",
+      "name": "Minimum peak-attendance fix percentage",
+      "description": "Minimum GPS-fix percentage at a location on its peak-attendance day",
+      "defaultValue": 1,
+      "type": "INTEGER"
+    },
+    {
+      "id": "min_days_att1",
+      "name": "Minimum percentage days of use",
+      "description": "Minimum % days of use for a point to be considered a nest",
+      "defaultValue": 1,
+      "type": "INTEGER"
+    },
+    {
+      "id": "month_start",
+      "name": "Earliest month to keep data",
+      "description": "Earliest month to keep data (active breeding start)",
+      "defaultValue": 2,
+      "type": "INTEGER"
+    },
+    {
+      "id": "month_end",
+      "name": "Latest month to keep data",
+      "description": "Latest month to keep data (active breeding end)",
+      "defaultValue": 6,
+      "type": "INTEGER"
+    },
+    {
+      "id": "max_frequency",
+      "name": "Maximum fix frequency (minutes)",
+      "description": "Max frequency (minutes) of fixes to use",
+      "defaultValue": 10,
+      "type": "INTEGER"
+    },
+    {
+      "id": "min_n_fix_day",
+      "name": "Minimum fixes per day (Filter)",
+      "description": "Minimum number of fixes per day for that bird-day to be included in analysis",
+      "defaultValue": 19,
+      "type": "INTEGER"
+    },
+    {
+      "id": "nest_radius",
+      "name": "Nest radius (meters)",
+      "description": "Radius in meters around nest for a fix to be classified as \"at the nest\"",
+      "defaultValue": 20,
+      "type": "INTEGER"
+    },
+    {
+      "id": "min_acc_bouts_day",
+      "name": "Minimum acceleration bouts per day",
+      "description": "Minimum number of acc bouts per day for that bird-day to be included in analysis",
+      "defaultValue": 5,
+      "type": "INTEGER"
+    },
+    {
+      "id": "laying_threshold",
+      "name": "Laying threshold probability",
+      "description": "When smooth probability goes above this (1st time) = laying date",
+      "defaultValue": 0.1,
+      "type": "DOUBLE"
+    },
+    {
+      "id": "hatching_threshold",
+      "name": "Hatching threshold probability",
+      "description": "When smooth probability goes below this (last time) = hatching date",
+      "defaultValue": 0.95,
+      "type": "DOUBLE"
+    },
+    {
+      "id": "min_inc_per_1clutch",
+      "name": "Minimum incubation days (Single clutch)",
+      "description": "Minimum number of days of incubation period in single clutches",
+      "defaultValue": 30,
+      "type": "INTEGER"
+    },
+    {
+      "id": "min_inc_per_2clutch",
+      "name": "Minimum incubation days (Second clutch)",
+      "description": "Minimum number of days of incubation period in second clutches",
+      "defaultValue": 44,
+      "type": "INTEGER"
+    },
+    {
+      "id": "filterData",
+      "name": "Filter output to predicted ID-years",
+      "description": "If true, filter and return only individual-years with breeding predictions",
+      "defaultValue": false,
+      "type": "BOOLEAN"
     }
   ],
   "dependencies": {
     "R": [
-      {
-        "name": "lubridate"
-      },
-      {
-        "remotes": "install_git('https://gitlab.com/bartk/move2.git')"
-      }
+      { "name": "ggnewscale" },
+      { "name": "tidymodels" },
+      { "name": "dplyr" },
+      { "name": "moments" },
+      { "name": "ranger" },
+      { "name": "parsnip" },
+      { "name": "caret" },
+      { "name": "zoo" },
+      { "name": "readxl" },
+      { "name": "writexl" },
+      { "name": "tidyr" },
+      { "name": "randomForest" },
+      { "name": "slider" },
+      { "name": "ggplot2" },
+      { "name": "rsample" },
+      { "name": "tidyverse" },
+      { "name": "data.table" },
+      { "name": "mgcv" },
+      { "name": "tibble" },
+      { "remotes": "picardis/nestR" }
     ]
   },
-  "providedAppFiles": [
-    {
-      "settingId": "auxiliary-file-a",
-      "from": "data/auxiliary/user-files/provided-app-files/auxiliary-file-a/sample.txt"
-    }
-  ],
-  "license": {
-    "key": "MIT"
-  },
+  "license": { "key": "MIT" },
   "language": "eng",
-  "keywords": [
-    "example",
-    "template"
-  ],
+  "keywords": ["breeding", "accelerometer", "gps", "random forest"],
   "people": [
     {
-      "firstName": "Charles",
-      "middleInitials": null,
-      "lastName": "Darwin",
-      "email": "creator@example.com",
-      "roles": [
-        "author",
-        "creator"
-      ],
-      "orcid": null,
-      "affiliation": null,
-      "affiliationRor": null
-    }
-  ],
-  "funding": [
+      "firstName": "João",
+      "lastName": "Paulino",
+      "email": "",
+      "roles": ["author", "creator"]
+    },
     {
-      "name": "funder name",
-      "comment": "grant for App"
+      "firstName": "Tomé",
+      "lastName": "Neves",
+      "email": "",
+      "roles": ["author"]
     }
   ],
-  "references": [
+    "references": [
     {
       "type": "IsDescribedBy",
-      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
-      "url": "https://anylink.xyz"
+      "note": "REFERENCE TBD",
+      "url": "REFERENCE TBD"
     }
   ]
 }
