@@ -139,7 +139,7 @@
       "name": "Filter output to predicted ID-years",
       "description": "If true, filter and return only individual-years with breeding predictions",
       "defaultValue": false,
-      "type": "BOOLEAN"
+      "type": "CHECKBOX"
     }
   ],
   "dependencies": {
@@ -173,7 +173,7 @@
     {
       "firstName": "João",
       "lastName": "Paulino",
-      "email": "",
+      "email": "joao.paulino@cibio.up.pt",
       "roles": ["author", "creator"]
     },
     {
@@ -187,7 +187,11 @@
     {
       "type": "IsDescribedBy",
       "note": "REFERENCE TBD",
-      "url": "REFERENCE TBD"
+      "url": "https://REFERENCETBD"
     }
-  ]
+  ],
+    "documentation" : {
+    "url": "https://github.com/stork-group/incubation_classification/blob/master/README.md"
+  }
+  
 }
