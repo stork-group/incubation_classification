@@ -2,9 +2,7 @@
 
 MoveApps
 
-Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to the repository where the code of the App can be found)*
-
-*(Note: all text in italics are instructions for filling out this template. Please replace or delete them before publishing your App.)*
+Github repository: https://github.com/stork-group/incubation_classification/
 
 *(Optional, but very helpful for Users: add here a screenshot or example figure of a typical result of the App, e.g. a plot, a map or a table. Save the image in the repository (e.g. in a folder `documentation/`) and include it with:*
 <p align="center">
@@ -34,16 +32,10 @@ To facilitate adaptation to other species, the App is accompanied by scripts to 
 The App is designed to work with any type of GPS location data, provided that the tracking device is also equipped with an accelerometer capable of recording tri-axial acceleration data (X: sway, Y: surge, and Z: heave).
 
 ### Input type
-The App automatically retrieves GPS location and tri-axial accelerometer data from Movebank using the `move::getMovebank` and `move::getMovebankData` functions. No manual data upload is required.
-
-Input type: Movebank study data (GPS and accelerometer data).
+move2_loc
 
 ### Output type
-The App generates several intermediate CSV and Excel files during processing, but its primary output is a CSV file named `original_df_annotated_.csv`, containing the original GPS data annotated with the predicted breeding-related information.
-
-Output type: CSV (`.csv`).
-
-Final output file: `original_df_annotated_.csv`.
+move2_loc
 
 ### Artefacts
 `nest_df.csv`: CSV file containing the estimated nest coordinates (latitude and longitude) for each bird-year combination, identified using the `nestR` package.
@@ -55,16 +47,6 @@ Final output file: `original_df_annotated_.csv`.
 `original_df_annotated_.csv`: CSV file derived from the original input dataset (`all_data_movebank.csv`), filtered to retain only individual-year combinations for which at least one breeding date (laying or hatching) was successfully predicted. Includes additional columns with the predicted laying and hatching dates, incubation period duration (days), and breeding outcome (`single_clutch`, `second_clutch`, `no_breeding`, `failed_breeding`, or `unclassified breeding`). This is the main output of the App.
 
 ### Settings 
-#### Movebank Settings
-`my_username` (my_username): Your Movebank username as a characater string. Unit: NA (dimensionless). Default: NA.
-
-`my_password` (my_password): Your Movebank password as a characater string. Unit: NA (dimensionless). Default: NA.
-
-`study_id` (study_id): Numeric Movebank study ID identifying the study from which the data will be imported. Unit: NA (dimensionless). Default: NA.
-
-`time_start` (time_start): Earliest date and time from which GPS data will be downloaded. Format: yyyy-mm-dd hh:mm:ss (POSIXct), time zone: UTC. Default: NA.
-
-`time_end` (time_end): Latest date and time from which GPS data will be downloaded. Format: yyyy-mm-dd hh:mm:ss (POSIXct), time zone: UTC. Default: NA.
 
 #### NestR Settings
 `sea_start` (sea_start1): Earliest date from which to search for candidate nest locations, corresponding to the start of the period of intensive nest use for the target species. Format: character string ("mm-dd"). Default: NA.
