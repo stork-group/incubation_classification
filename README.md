@@ -4,11 +4,10 @@ MoveApps
 
 Github repository: https://github.com/stork-group/incubation_classification/
 
-*(Optional, but very helpful for Users: add here a screenshot or example figure of a typical result of the App, e.g. a plot, a map or a table. Save the image in the repository (e.g. in a folder `documentation/`) and include it with:*
 <p align="center">
-  <img alt="Screenshot of the Apps UI" src="documentation/screenshot_UI.png" width="600">
+  <img alt="Screenshot of laying_hatching_predictions_summary_solo.csv" src="documentation/Sample Output.png" width="600">
 </p>
-*)*
+
 
 ## Description
 This Move App allows users to estimate key breeding parameters in birds using GPS and accelerometer tracking data. Specifically, it estimates egg-laying and hatching dates, incubation period duration, and breeding outcomes, including single clutch, second clutch, failed breeding and no breeding.
