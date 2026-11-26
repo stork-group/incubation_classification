@@ -192,6 +192,20 @@
   ],
     "documentation" : {
     "url": "https://github.com/stork-group/incubation_classification/blob/master/README.md"
-  }
+  },
+  "providedAppFiles": [
+    {
+      "settingId": "functions",
+      "from": "data/auxiliary/user-files/provided-app-files/functions/"
+    },
+    {
+      "settingId": "RF_Model_Sitting_Non_Sitting",
+      "from": "data/auxiliary/user-files/provided-app-files/RF_Model_Sitting_Non_Sitting/"
+    },
+    {
+      "settingId": "RF_Model_Incubation",
+      "from": "data/auxiliary/user-files/provided-app-files/RF_Model_Incubation/"
+    }
+  ]
   
 }
