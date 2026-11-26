@@ -491,7 +491,7 @@ rFunction <- function(data,
   ###############################################################################################
 
   # Load required functions
-  source("functions.R") # From Vaadia et al. 2025
+  source(getAuxiliaryFilePath("functions")) # From Vaadia et al. 2025
 
   # Import data bases
   acc <- df_acc
@@ -657,7 +657,7 @@ rFunction <- function(data,
   ## Behavioral classification of unobserved data
 
   # Import my model
-  unobs_fit <- readRDS("RF_Model_Sitting_Non_Sitting.rda")
+  unobs_fit <- readRDS(getAuxiliaryFilePath("RF_Model_Sitting_Non_Sitting"))
 
   ## Apply the model to the unobserved dataset
 
@@ -839,7 +839,7 @@ rFunction <- function(data,
   ## Behavioral classification of unobserved data
 
   # Import my model
-  unobs_fit <- readRDS("RF_Model_Incubation.rda")
+  unobs_fit <- readRDS(getAuxiliaryFilePath("RF_Model_Incubation"))
 
   ## Apply the model to the unobserved dataset
 
