@@ -92,9 +92,10 @@ move2_loc
 The App filters the input data to retain only individual-year combinations for which at least one breeding date (laying or hatching) was successfully predicted. It also adds columns with the predicted laying and hatching dates, incubation period duration (days), and breeding outcome (`single_clutch`, `second_clutch`, `no_breeding`, `failed_breeding`, or `unclassified breeding`).
 
 ### Errors and null handling
+
 **Settings:** All settings must be properly defined before running the App. If any required setting is missing or left undefined, the App will stop and generate an error message indicating where the issue occured. The location of the error message within the script depends on which setting has not been specified.
 
-**Input data:** If the input data contain only tracks with fewer than 19 GPS locations per day and/or fewer than 5 accelerometer bouts per day, the App will stop running and display an error message.
+**Input data:** If the input data contain only tracks with fewer than 19 GPS locations per day and/or fewer than 5 accelerometer bouts per day, or if the input move2 object lacks acceleration_raw_x, acceleration_raw_y, and acceleration_raw_z, the App logs a warning and returns an empty move2 object if the filter option is turned on, or the original move2 object if it is turned off.
 
 ### Technical details
 The App follows a multi-step analytical workflow combining GPS-derived nest-use information, accelerometer-based behavioural classification using machine learning algorithms and statistical modelling to estimate breeding parameters.
